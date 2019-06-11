@@ -194,4 +194,12 @@ class AdminLoginController extends Controller
     }
 
     //
+    public function listOrder(){
+        $list_order = DB::table('customer')
+        ->leftjoin('bills', 'customer.id', '=', 'bills.id_customer')
+        ->leftjoin('bill_detail', 'bills.id', '=', 'bill_detail.id_bill')
+        ->select('customer.*','bills.*','bill_detail.*')
+        ->get();
+          return view('admin.listOrder',compact('list_order')); 
+    }
 }

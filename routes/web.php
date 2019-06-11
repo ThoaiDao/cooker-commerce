@@ -139,6 +139,10 @@ Route::group(['prefix' => 'admin', 'middleware'=> ['auth' => 'admin']], function
         'as' => 'searchCustomer',
         'uses'=>'AdminLoginController@searchCustomer'
     ]);
+    Route::get('listOrder',[
+        'as' => 'listOrder',
+        'uses'=>'AdminLoginController@listOrder'
+    ]);
 });
 //Tim kiem
 Route::get('timkiem',[
@@ -172,3 +176,10 @@ Route::get('check_out',[
     'as'=>'check_out',
     'uses'=>'CheckoutController@getCheckout'
 ]);
+Route::post('check_out',[
+    'as'=>'check_out',
+    'uses'=>'CheckoutController@postCheckOut'
+]);
+
+
+

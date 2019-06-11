@@ -3,24 +3,50 @@
 <br>
 <br>
     <div class="container">
+        <form action="{{route('check_out')}}" method="POST">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default panel-body">
                     <div  style=" border-bottom: 1px solid #c9c9c9;padding-bottom: 10px;" ><br>
                         <h6>1. Hình thức giao hàng</h6>
-                        <input style="  " type="radio" name="" id="">Giao hàng tiêu chuẩn <br>
+                        <p style="  " type="text" name="" id="">Giao hàng tiêu chuẩn </p><br>
                         <br>
                     </div>
                     <div  style=" border-bottom: 1px solid #c9c9c9;padding-bottom: 10px;" ><br>
                         <h6>2. Hình thức thanh toán</h6>
-                        <input type="radio" name="" id=""> Thanh toán tiền mặt khi nhận hàng <br>
+                        <input type="radio" name="payment" id=""> Thanh toán tiền mặt khi nhận hàng <br>
                         <br>
+                        <input type="radio" name="payment" id=""> Thanh toán chuyển khoản<br>
+                        <br>
+                        
                     </div>
                     <div  style="padding-bottom: 10px;" ><br>
-                        <h6>3. Địa chỉ giao hàng</h6>
+                        <h6>3. Thông tin giao hàng</h6>
                         <div class="information">
-                            <span>Đào Anh Nữ Huyền Thoại</span><br>
-                            <span>19/25 số 8 Linh Trung Thủ Đức, Phường Linh Trung, Quận Thủ Đức, Hồ Chí Minh<br>Điện thoại: 0337482132</span>
+                        @if (Auth::user())
+                                <label>Họ tên</label>
+                                <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}"/>
+                                <br>
+                                <label>Giới tính</label>
+                                 <br> 
+                                <br>
+                                <input type="radio" name="gender" class="" value="Nữ"/> Nữ 
+                                <input type="radio" name="gender" class="" value="Nữ"/> Nam 
+                                <br>
+                                <br>
+                                  <label>Email</label>
+                                <input type="text" name="email" class="form-control" value="{{ Auth::user()->email}}"/>
+                                <br>
+                                <label>Số điện thoại</label>
+                                <input type="text" name="phone" class="form-control" value="{{ Auth::user()->phone}}"/>
+                                <br>
+                                <label>Địa chỉ</label>
+                                <input type="text" name="address" class="form-control" value="{{ Auth::user()->address}}"/>
+                                <br>
+                               
+                                <br>
+                                @endif
                         </div>
                         <br>
                         <a href="/checkout/cart/" class="btn btn-default btn-custom1">Sửa</a>
@@ -83,6 +109,7 @@
             </div>
    
         </div>
+        </form>
     </div>
     <br>
 @stop

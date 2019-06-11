@@ -95,7 +95,7 @@
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="{{route('cart',$spkhac->id)}}"><i class="fa fa-shopping-cart"></i></a>
-											<a style ="" class="beta-btn primary" href="product.php">Chi tiết <i class="fa fa-chevron-right"></i></a>
+											<a style ="" class="beta-btn primary" href="{{route('chitietsanpham',$sptt->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>

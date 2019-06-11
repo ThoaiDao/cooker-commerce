@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{route('trang-chu')}}">Tài khoản</a> / <span>Quản lý đơn hàng</span>
+					<a href="{{route('/')}}">Tài khoản</a> / <span>Quản lý đơn hàng</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>

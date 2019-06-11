@@ -19,7 +19,7 @@ class ProfileController extends Controller
          $infor->update();
         return redirect()->back()->with('thanhcong','Cập nhật tài khoản thành công');
     }
-    public function order(){
-        return view('profile.QuanLyDonHang');
-    }
+    // public function order(){
+    //     return view('profile.QuanLyDonHang');
+    // }
 }

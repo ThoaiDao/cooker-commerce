@@ -36,7 +36,7 @@ class UserController extends Controller
             'status' => 0
         ];
         if (Auth::attempt($login)) {
-            return redirect('trang-chu');
+            return redirect('/');
         } 
         return redirect()->back()->withInput($req->only('email', 'remember'))->withErrors([
             'approve' => 'Wrong password or this account not approved yet.',
@@ -45,7 +45,7 @@ class UserController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('trang-chu');
+        return redirect('/');
     }
 
 }

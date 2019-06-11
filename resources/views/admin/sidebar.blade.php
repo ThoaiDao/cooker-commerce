@@ -9,11 +9,13 @@
       <div class="pull-left image">
         <img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
       </div>
+      @if (Auth::user())
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p>{{Auth::user()->name}}</p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
+      @endif
     </div>
 
     <!-- search form (Optional) -->
@@ -41,7 +43,7 @@
           <li><a href="#">Xóa sửa sản phẩm</a></li>
         </ul> -->
       </li>
-      <li><a href="#">
+      <li><a href="{{route('listOrder')}}">
         <span>Đơn hàng</span></a>
       </li>
       <li><a href="{{route('member_list')}}">

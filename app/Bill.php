@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    protected $table = 'bill';
+    protected $table = 'bills';
 
     //1 bill sẽ có nhiều billdetail
     public function bill_detail(){
