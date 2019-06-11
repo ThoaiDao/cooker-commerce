@@ -1,0 +1,58 @@
+/* ==========================================================================
+    COLOR STYLE YELLOW
+============================================================================= */
+.main-menu ul li.active> a{background:rgba(255, 55, 0, 0.68); }
+.sub-menu li.active, .children li.active{background:rgba(255, 55, 0, 0.68);}
+.main-menu ul.l-inline> li> a:hover{background: rgba(255, 55, 0, 0.68)!important;}
+.sub-menu li:hover, .children li:hover{background: rgba(255, 55, 0, 0.68)!important;}
+.add-to-cart{background:rgba(255, 55, 0, 0.68);}
+.ribbon{background:rgba(255, 55, 0, 0.68);}
+.beta-tags a:hover{background:rgba(255, 55, 0, 0.68);}
+#price-filter-range .ui-slider-handle{background:rgba(255, 55, 0, 0.68);}
+.beta-btn.primary:hover{background:rgba(255, 55, 0, 0.68);}
+.aside .widget-title{border-left: 3px solid rgba(255, 55, 0, 0.68);}
+.single-item:hover a.add-to-cart{background: #780000;}
+.ribbon.sale{background: #780000;}
+
+
+.work-item-actions a:hover{background: rgba(255, 55, 0, 0.68);}
+.icon-box-a i{color: rgba(255, 55, 0, 0.68);}
+.icon-circle{border: 1px solid rgba(255, 55, 0, 0.68);color: rgba(255, 55, 0, 0.68);}
+.icon-box-b i{color: rgba(255, 55, 0, 0.68);}
+.beta-circle{background: rgba(255, 55, 0, 0.68);}
+.beta-filter ul#filters li.active a{border: 1px solid rgba(255, 55, 0, 0.68);}
+.panel-default>.panel-heading.beta-active-tab{background: rgba(255, 55, 0, 0.68);}
+.panel-default>.panel-heading .panel-title a:hover i{color: rgba(255, 55, 0, 0.68);}
+.beta-highlight{background-color:rgba(255, 55, 0, 0.68);}
+.bg-color4{background-color:rgba(255, 55, 0, 0.68);}
+
+.beta-progress .progress-bar{background-color:rgba(255, 55, 0, 0.68);}
+.ratio-1x1 i{color:rgba(255, 55, 0, 0.68);}
+.icon-box-f .icon-box-icon i{color:rgba(255, 55, 0, 0.68);}
+.beta-counter i{color:rgba(255, 55, 0, 0.68);}
+.icon-box-c i{color:rgba(255, 55, 0, 0.68);}
+.bg-color10{background-color:rgba(255, 55, 0, 0.68);}
+.panel-default>.panel-heading .panel-title a:hover .accordion-circle{border: 1px solid rgba(255, 55, 0, 0.68);}
+.icon-box-g:hover .icon-box-icon{color:rgba(255, 55, 0, 0.68);}
+.icon-box-g:hover .icon-box-caption{background-color:rgba(255, 55, 0, 0.68);}
+.icon-box-g:hover .indicator-top-small{border-color: transparent transparent rgba(255, 55, 0, 0.68) transparent;}
+.history-navigation a.active{background-color:rgba(255, 55, 0, 0.68);}
+.history-navigation a{border: 2px solid rgba(255, 55, 0, 0.68);}
+.inner-header{background-color:rgba(255, 55, 0, 0.68);}
+.beta-callout-box-a i{color:rgba(255, 55, 0, 0.68);}
+.icon-box-d i{color:rgba(255, 55, 0, 0.68);}
+.icon-box-d:hover i{color:#f90;}
+.uc-header{background-color:rgba(255, 55, 0, 0.68);}
+.beta-subscribers button{background-color:rgba(255, 55, 0, 0.68);}
+.beta-blog-date{background-color:rgba(255, 55, 0, 0.68);}
+.mejs-audio .mejs-controls .mejs-time-current, .mejs-audio .mejs-controls .mejs-horizontal-volume-current{background-color:rgba(255, 55, 0, 0.68)!important;}
+.beta-calendar .ui-datepicker-calendar a:hover{background-color:rgba(255, 55, 0, 0.68)!important;}
+.beta-message{background-color:rgba(255, 55, 0, 0.68);}
+.beta-pricing span.beta-price-button a{background-color:rgba(255, 55, 0, 0.68);}
+table.shop_table tfoot td .beta-btn, table.shop_table tfoot th .beta-btn{background-color:rgba(255, 55, 0, 0.68);}
+table.shop_table tfoot td .beta-btn:hover, table.shop_table tfoot th .beta-btn:hover{background-color:#f90;}
+.beta-promobox-b{background-color:rgba(255, 55, 0, 0.68);}
+
+.parent-active>a{background:rgba(255, 55, 0, 0.68); color:white;}
+.sub-menu li.parent-active, .children li.parent-active{background:rgba(255, 55, 0, 0.68); }
+.sub-menu li.parent-active>a, .children li.parent-active>a{color:white!important;}
