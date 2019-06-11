@@ -5,6 +5,10 @@
     <div class="container">
         <form action="{{route('check_out')}}" method="POST">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+        @if(Session::has('thongbao'))
+                              <div class="alert alert-success">
+                                  {{Session::get('thongbao')}}</div>
+                            @endif
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default panel-body">
@@ -15,9 +19,9 @@
                     </div>
                     <div  style=" border-bottom: 1px solid #c9c9c9;padding-bottom: 10px;" ><br>
                         <h6>2. Hình thức thanh toán</h6>
-                        <input type="radio" name="payment" id=""> Thanh toán tiền mặt khi nhận hàng <br>
+                        <input type="radio" name="payment" id="" value="Tiền mặt"> Thanh toán tiền mặt khi nhận hàng <br>
                         <br>
-                        <input type="radio" name="payment" id=""> Thanh toán chuyển khoản<br>
+                        <input type="radio" name="payment" id=""value="Chuyển khoản"> Thanh toán chuyển khoản<br>
                         <br>
                         
                     </div>
@@ -69,7 +73,7 @@
                         {{$pr->qty}} x <a href="#">{{$pr->name}}</a>
                         </div>
                         <div class="col-md-4">
-                            <span>{{$pr->price * $pr->qty}} ₫</span>
+                            <span>{{$pr->price * (int)$pr->qty}} ₫</span>
                         </div>
                     @endforeach
                     </div>

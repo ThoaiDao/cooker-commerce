@@ -22,7 +22,6 @@ class CheckoutController extends Controller
     }
     public function postCheckOut(Request $request){
         $cart = Cart::content();
-        //  dd($cart);
         $customer = new customer;
         $customer->name = $request->name;
         $customer->gender= $request->name;
@@ -31,14 +30,12 @@ class CheckoutController extends Controller
         $customer->address= $request->address;
         $customer->save();
 
-        foreach($cart  as $ct){
-            $bill = new Bill;
-            $bill->id_customer = $customer->id;
-            $bill->date_order = date('Y-m-d');
-            $bill->total = ($ct->qty * $ct->price);
-            $bill->payment = $request->payment;
-            $bill->save();
-        }
+        $bill = new Bill;
+        $bill->id_customer = $customer->id;
+        $bill->date_order = date('Y-m-d');
+        $bill->total = Cart::subtotal(0);
+        $bill->payment = $request->payment;
+        $bill->save();
         foreach($cart  as $ct){
             $bill_detail = new BillDetail;
             $bill_detail->id_bill = $bill->id;

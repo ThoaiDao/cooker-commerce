@@ -21,7 +21,7 @@
 					<div class="col-sm-3">
 						<ul class="aside-menu">
 							<li><a href="{{route('tt_taikhoan',$infor->id)}}">Thông tin tài khoản</a></li>
-							<li><a href="">Quản lý đơn hàng</a></li>
+							<li><a href="{{route('ql_donhang',$infor->id)}}}">Quản lý đơn hàng</a></li>
 						</ul>
 					</div>
 					<div class="col-sm-9">

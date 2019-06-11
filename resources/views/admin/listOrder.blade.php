@@ -45,7 +45,6 @@
                                     <th>Ngày order</th>
                                     <th >Tổng hóa đơn</th>
                                     <th>Hình thức thanh toán</th>
-                                    <th>Mã sản phẩm</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +54,6 @@
                                         <td style ="width: 150px ;   border-right: 1px ridge;">{{$order->date_order}}</td>
                                         <td style ="width: 60px ;   border-right: 1px ridge;">{{$order->total}}</td>
                                         <td style ="width: 60px;    border-right: 1px ridge;">{{$order->payment}}</td>
-                                        <td style ="width: 60px;    border-right: 1px ridge;">{{$order->id_product}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
