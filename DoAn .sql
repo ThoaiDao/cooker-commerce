@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 11, 2019 at 06:19 PM
+-- Generation Time: Jun 12, 2019 at 02:59 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -32,9 +32,8 @@ CREATE TABLE `bills` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_customer` int(11) DEFAULT NULL,
   `date_order` date DEFAULT NULL,
-  `total` float DEFAULT NULL COMMENT 'tổng tiền',
+  `total` text COMMENT 'tổng tiền',
   `payment` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'hình thức thanh toán',
-  `note` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -43,9 +42,9 @@ CREATE TABLE `bills` (
 -- Dumping data for table `bills`
 --
 
-INSERT INTO `bills` (`id`, `id_customer`, `date_order`, `total`, `payment`, `note`, `created_at`, `updated_at`) VALUES
-(5, 5, '2017-03-23', 20000, 'tiền mặt', NULL, '2017-03-11 13:06:44', '2017-03-11 13:06:44'),
-(6, 6, '2019-06-19', 777, 'hgh', 'yhy', '2019-06-11 11:50:21', '2019-06-11 11:50:21');
+INSERT INTO `bills` (`id`, `id_customer`, `date_order`, `total`, `payment`, `created_at`, `updated_at`) VALUES
+(44, 48, '2019-06-12', '160,000', NULL, '2019-06-11 17:54:17', '2019-06-11 17:54:17'),
+(43, 47, '2019-06-11', '1,300,000', 'Chuyển khoản', '2019-06-11 13:56:26', '2019-06-11 13:56:26');
 
 -- --------------------------------------------------------
 
@@ -68,8 +67,16 @@ CREATE TABLE `bill_detail` (
 --
 
 INSERT INTO `bill_detail` (`id`, `id_bill`, `id_product`, `quantity`, `unit_price`, `created_at`, `updated_at`) VALUES
-(1, 5, 3, 2, 5000, '2017-03-11 13:10:10', '0000-00-00 00:00:00'),
-(2, 5, 12, 1, 10000, '2017-03-11 13:08:01', '0000-00-00 00:00:00');
+(37, 41, 3, 1, 150000, '2019-06-11 13:37:51', '2019-06-11 13:37:51'),
+(36, 41, 52, 1, 150000, '2019-06-11 13:37:51', '2019-06-11 13:37:51'),
+(35, 41, 6, 5, 200000, '2019-06-11 13:37:51', '2019-06-11 13:37:51'),
+(38, 42, 6, 5, 200000, '2019-06-11 13:43:24', '2019-06-11 13:43:24'),
+(41, 43, 6, 5, 200000, '2019-06-11 13:56:26', '2019-06-11 13:56:26'),
+(40, 42, 3, 1, 150000, '2019-06-11 13:43:24', '2019-06-11 13:43:24'),
+(39, 42, 52, 1, 150000, '2019-06-11 13:43:24', '2019-06-11 13:43:24'),
+(42, 43, 52, 1, 150000, '2019-06-11 13:56:26', '2019-06-11 13:56:26'),
+(43, 43, 3, 1, 150000, '2019-06-11 13:56:26', '2019-06-11 13:56:26'),
+(44, 44, 4, 1, 160000, '2019-06-11 17:54:17', '2019-06-11 17:54:17');
 
 -- --------------------------------------------------------
 
@@ -84,17 +91,19 @@ CREATE TABLE `customer` (
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `phone_number` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `note` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`id`, `name`, `gender`, `email`, `address`, `phone_number`, `note`, `created_at`, `updated_at`) VALUES
-(1, 'Huong Huong', 'Nữ', 'huongnguyenak96@gmail.com', 'le thi rieng', '55555555', '55555555555555', '2016-11-14 08:25:57', '2016-11-14 08:25:57');
+INSERT INTO `customer` (`id`, `name`, `gender`, `email`, `address`, `phone_number`, `updated_at`, `created_at`) VALUES
+(48, 'Hana', 'Hana', 'huyenthoai1002@gmail.com', 'Quận 6', '337482132', '2019-06-11 17:54:17', '2019-06-11 17:54:17'),
+(47, 'Hana', 'Hana', 'huyenthoai1002@gmail.com', 'Quận 6', '337482132', '2019-06-11 13:56:26', '2019-06-11 13:56:26'),
+(46, 'Hana', 'Hana', 'huyenthoai1002@gmail.com', 'Quận 6', '337482132', '2019-06-11 13:43:24', '2019-06-11 13:43:24'),
+(45, 'Hana', 'Hana', 'huyenthoai1002@gmail.com', 'Quận 6', '337482132', '2019-06-11 13:37:51', '2019-06-11 13:37:51');
 
 -- --------------------------------------------------------
 
@@ -431,19 +440,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `bill_detail`
 --
 ALTER TABLE `bill_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `migrations`
